@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@adapters/*": ["./src/application/adapters/*"],
+      "@domain/*": ["./src/application/domain/*"],
+      "@use-cases": ["./src/application/use-cases"]
+    },
+    "module": "CommonJS",
+    "target": "ESNext",
+    "strictNullChecks": true,
+    "strict": true,
+    "rootDirs": ["src", "integration-tests", "architecture-tests"],
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["../../node_modules/@types", "./node_modules/@types"],
+    "lib": ["dom", "ES2023"]
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "include": ["src", "integration-tests", "architecture-tests"]
+}

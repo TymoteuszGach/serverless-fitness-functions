@@ -1,0 +1,14 @@
+{
+  "testEnvironment": "node",
+  "roots": ["<rootDir>/integration-tests"],
+  "testMatch": ["**/*.test.ts"],
+  "resetMocks": true,
+  "transform": {
+    "^.+\\.(t|j)sx?$": "@swc/jest"
+  },
+  "moduleNameMapper": {
+    "@adapters/(.*)": "<rootDir>/src/application/adapters/$1",
+    "@domain/(.*)": "<rootDir>/src/application/domain/$1",
+    "@use-cases": "<rootDir>/src/application/use-cases"
+  }
+}

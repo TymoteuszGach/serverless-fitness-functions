@@ -1,0 +1,13 @@
+{
+  "testEnvironment": "node",
+  "roots": ["<rootDir>/src", "<rootDir>/architecture-tests"],
+  "testMatch": ["**/*.test.ts"],
+  "transform": {
+    "^.+\\.ts?$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@adapters/(.*)": "<rootDir>/src/application/adapters/$1",
+    "@domain/(.*)": "<rootDir>/src/application/domain/$1",
+    "@use-cases": "<rootDir>/src/application/use-cases"
+  }
+}
