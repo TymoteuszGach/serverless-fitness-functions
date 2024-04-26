@@ -9,7 +9,7 @@ import * as path from 'path';
 
 import { Construct } from 'constructs';
 import { MyStack, MyStackProps } from './my-stack';
-import { ProgressiveLambda } from '../constructs/progressive-lambda';
+import { CanaryLambda } from '../constructs/canary-lambda';
 import { ITable } from 'aws-cdk-lib/aws-dynamodb';
 import { Api } from '../constructs/api';
 
@@ -33,7 +33,7 @@ export class MyStatelessStack extends MyStack {
 
     const application = new codeDeploy.LambdaApplication(this, 'CodeDeployApplication');
 
-    const { alias: enrollAccountLambdaAlias, lambda: enrollAccountLambda } = new ProgressiveLambda(
+    const { alias: enrollAccountLambdaAlias, lambda: enrollAccountLambda } = new CanaryLambda(
       this,
       'EnrollAccountLambda',
       {

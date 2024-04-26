@@ -6,6 +6,7 @@ import { MyStatefulStack, MyStatelessStack } from './stacks';
 import { requiredTags, Tags } from './aspects/required-tags';
 import { RequiredTagsRule } from './aspects/required-tags-rule';
 import { AwsSolutionsChecks } from 'cdk-nag';
+import { CanaryLambdaRule } from './aspects/canary-lambda-rule';
 
 const app = new cdk.App();
 
@@ -22,4 +23,5 @@ new MyStatelessStack(app, 'MyStatelessStack', {
 });
 
 cdk.Aspects.of(app).add(new RequiredTagsRule(requiredTags));
+cdk.Aspects.of(app).add(new CanaryLambdaRule());
 cdk.Aspects.of(app).add(new AwsSolutionsChecks({ verbose: false }));

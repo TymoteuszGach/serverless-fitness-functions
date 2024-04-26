@@ -10,7 +10,7 @@ import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 
 import { Construct } from 'constructs';
 
-interface ProgressiveLambdaProps extends nodeLambda.NodejsFunctionProps {
+interface CanaryLambdaProps extends nodeLambda.NodejsFunctionProps {
   /**
    * The stage name which the lambda is being used with
    */
@@ -45,7 +45,7 @@ interface ProgressiveLambdaProps extends nodeLambda.NodejsFunctionProps {
   serviceName: string;
 }
 
-export class ProgressiveLambda extends Construct {
+export class CanaryLambda extends Construct {
   readonly lambda: nodeLambda.NodejsFunction;
   readonly alias: lambda.Alias;
   readonly alarm: cloudwatch.Alarm;
@@ -54,7 +54,7 @@ export class ProgressiveLambda extends Construct {
   private readonly application: codeDeploy.LambdaApplication;
   private readonly deploymentConfig: codeDeploy.ILambdaDeploymentConfig;
 
-  constructor(scope: Construct, id: string, props: ProgressiveLambdaProps) {
+  constructor(scope: Construct, id: string, props: CanaryLambdaProps) {
     super(scope, id);
 
     this.application = props.application;
