@@ -11,7 +11,7 @@ export class CanaryLambdaRule implements IAspect {
     if (node instanceof NodejsFunction) {
       if (!(node.node.scope instanceof CanaryLambda)) {
         Annotations.of(node).addError(
-          'NodeJsFunction used directly. Please use ProgressiveLambda construct.',
+          'NodeJsFunction used directly. Please use CanaryLambda construct.',
         );
       }
     }
