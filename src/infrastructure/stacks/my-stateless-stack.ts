@@ -21,7 +21,7 @@ export class MyStatelessStack extends MyStack {
   constructor(scope: Construct, id: string, props: MyStatelessStackProps) {
     super(scope, id, props);
 
-    const canaryNotificationEmail = 'tymoteusz.gach@gmail.com';
+    const canaryNotificationEmail = 'your.email@example.com';
     const serviceName = props?.tags['service-name'] ?? 'unknown';
     const namespace = props?.tags['namespace'] ?? 'unknown';
     const { accountsTable } = props;
