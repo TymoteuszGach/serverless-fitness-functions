@@ -1,3 +1,3 @@
 # serverless-fitness-functions
 
-Demo project for an AWS CDK application using serverless fitness functions.
+AWS CDK application demonstrating the usage of serverless fitness functions.
