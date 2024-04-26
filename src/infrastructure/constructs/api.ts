@@ -33,7 +33,7 @@ export class Api extends Construct {
   constructor(scope: Construct, id: string, props: ApiProps) {
     super(scope, id);
 
-    const latencyThreshold = props.latencyThreshold ? props.latencyThreshold : 300;
+    const latencyThreshold = props.latencyThreshold ?? 300;
 
     const fixedProps: FixedApiProps = {
       defaultCorsPreflightOptions: {

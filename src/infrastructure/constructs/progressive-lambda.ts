@@ -46,12 +46,11 @@ interface ProgressiveLambdaProps extends nodeLambda.NodejsFunctionProps {
 }
 
 export class ProgressiveLambda extends Construct {
-  public readonly lambda: nodeLambda.NodejsFunction;
-  public readonly alias: lambda.Alias;
-  public readonly alarm: cloudwatch.Alarm;
-  public readonly uncaughtErrorsAlarm: cloudwatch.Alarm;
-
-  public readonly deploymentGroup: codeDeploy.LambdaDeploymentGroup;
+  readonly lambda: nodeLambda.NodejsFunction;
+  readonly alias: lambda.Alias;
+  readonly alarm: cloudwatch.Alarm;
+  readonly uncaughtErrorsAlarm: cloudwatch.Alarm;
+  readonly deploymentGroup: codeDeploy.LambdaDeploymentGroup;
   private readonly application: codeDeploy.LambdaApplication;
   private readonly deploymentConfig: codeDeploy.ILambdaDeploymentConfig;
 
